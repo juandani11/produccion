@@ -1,6 +1,6 @@
 ## Proyecto base
 
-Este proyecto está destinado al desarrollo y practica de Laravel 6.X 
+Este proyecto está con la versión Laravel 6.X, para el desarrollo de una tienda virtual de cosméticos.
 
 ## Nota
 

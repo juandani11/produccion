@@ -1,7 +1,7 @@
 {
-    "name": "laravel/laravel",
+    "name": "tienda-cosmeticos",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "Tienda Virtual de Cosméticos.",
     "keywords": [
         "framework",
         "laravel"
