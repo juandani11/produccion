@@ -1,7 +1,7 @@
 {
-    "name": "tienda-cosmeticos",
+    "name": "Produccion",
     "type": "project",
-    "description": "Tienda Virtual de Cosméticos.",
+    "description": "Sistema de procesos de producción.",
     "keywords": [
         "framework",
         "laravel"

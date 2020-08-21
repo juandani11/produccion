@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Bienvenido a ' . config('app.name'))
+@section('title', 'Bienvenido a Sistema ' . config('app.name'))
 
 @section('body-class', 'landing-page')
 
@@ -10,7 +10,7 @@
             font-size: 3rem;
         }
         div.section.section-contacts {
-            background-color: #efffff;
+            background-color: #efefef;
             border: 1px solid transparent;
             border-radius: 18%;
         }
@@ -21,12 +21,12 @@
 @endsection
 
 @section('content')
-<div class="page-header header-filter" style="background-image: url('{{ asset('/img/profile_city.jpg') }}');">
+<div class="page-header header-filter" style="background-image: url('{{ asset('/img/fondo_principal.jpg') }}');">
     <div class="container">
         <div class="row">
             <div class="col-md-7">
-                <h1 class="title">Bienvenido a {{ config('app.name') }}.</h1>
-                <h4>Quieres armar una buena peda en tu casa? La Garrita te ofrece lo necesario para tu evento social.</h4>
+                <h1 class="title">Bienvenido a Sistema {{ config('app.name') }}.</h1>
+                <h4>Permite realizar el control y la coordinación de los materiales.</h4>
                 <br />
                 <a href="#" class="btn btn-danger btn-raised btn-lg">
                     <i class="fa fa-play"></i> ¿Cómo funciona?
@@ -41,8 +41,8 @@
         <div class="section text-center ">
             <div class="row">
                 <div class="col-md-8 ml-auto mr-auto">
-                    <h2 class="title">¿Por qué confiar en {{ config('app.name') }}?</h2>
-                    <h5 class="description">Puedes reservar nuestros servicios pagando la mitad, con confianza te atenderos en tu evento social.</h5>
+                    <h2 class="title">¿Por qué confiar en Sistema {{ config('app.name') }}?</h2>
+                    <h5 class="description">Se estudiará el plan de requerimiento de materiales (MRP), determinando la cantidad de cada material que se requerirá para la fabricación de los productos, con el fin de generar las órdenes de compra de los materiales faltantes para que estén disponibles en el momento necesario, evitar retrasos en el proceso de producción, y garantizar las existencias de producto, en el momento justo que el cliente los demande.</h5>
                 </div>
             </div>
 
@@ -79,45 +79,12 @@
             </div>
         </div>
 
-        <div class="section text-center">
-            <h2 class="title">Productos disponibles</h2>
-            <div class="team">
-                <div class="row">
-                    @foreach ($products as $product)
-                    <div class="col-md-4">
-                        <div class="team-player">
-                            <div class="card card-plain">
-                            <div class="col-md-6 ml-auto mr-auto">
-                                <img src="../asset/img/faces/avatar.jpg" alt="Thumbnail Image" class="img-raised rounded-circle img-fluid">
-                            </div>
-                            <h4 class="card-title">{{$product->name}}
-                                <br>
-                                <small class="card-description text-muted">Model</small>
-                            </h4>
-                            <div class="card-body">
-                                <p class="card-description">{{$product->description}}
-                                <a href="#">links</a> for people to be able to follow them outside the site.</p>
-                            </div>
-                            <div class="card-footer justify-content-center">
-                                <a href="#pablo" class="btn btn-link btn-just-icon"><i class="fa fa-twitter"></i></a>
-                                <a href="#pablo" class="btn btn-link btn-just-icon"><i class="fa fa-instagram"></i></a>
-                                <a href="#pablo" class="btn btn-link btn-just-icon"><i class="fa fa-facebook-square"></i></a>
-                            </div>
-                            </div>
-                        </div>
-                    </div>                
-                    @endforeach
-                </div>
-                {{ $products->links() }}
-            </div>
-
-        </div>
 
         <div class="section section-contacts">
             <div class="row">
                 <div class="col-md-8 ml-auto mr-auto">
-                    <h2 class="text-center title">¿No te has registrado?</h2>
-                    <h4 class="text-center description">Regístrate ingresando tus datos básicos, y podrás realizar tus pedidos, nuestro carrito te ayudará a listar todos los servicios que requieras en tu evento. Ademas con tu cuenta de usuario podrás hacer todas tus consultas sin compromiso.</h4>
+                    <h2 class="text-center title">¿Quieres probar nuestro sistema MRP?</h2>
+                    <h4 class="text-center description">Regístrate ingresando tus datos básicos, y podrás consultar una demo para observar las funcionalidades de un sistema MRP.</h4>
                     <form class="contact-form" method="get" action="{{ url('/register') }}">
                     <div class="row">
                         <div class="col-md-6">

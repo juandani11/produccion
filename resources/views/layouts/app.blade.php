@@ -3,8 +3,7 @@
 
     <head>
         <meta charset="utf-8" />
-        <link rel="apple-touch-icon" sizes="76x76" href="../img/apple-icon.png">
-        <link rel="icon" type="image/png" href="../img/favicon.png">
+        <link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
         <title>@yield('title', config('app.name'))</title>
@@ -28,7 +27,7 @@
         <nav class="navbar navbar-transparent navbar-color-on-scroll fixed-top navbar-expand-lg" color-on-scroll="100" id="sectionsNav">
             <div class="container">
                 <div class="navbar-translate">
-                    <a class="navbar-brand" href="{{ url('/') }}">
+                    <a class="navbar-brand" href="{{ url('/home') }}">
                         <div class="logo-big">
                             <img src="{{ asset('/img/big-logo.png') }}" class="img-fluid">
                         </div>

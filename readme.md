@@ -1,6 +1,6 @@
 ## Proyecto base
 
-Este proyecto está con la versión Laravel 6.X, para el desarrollo de una tienda virtual de cosméticos.
+Este proyecto está con la versión Laravel 6.X, para el desarrollo de un sistema de procesos de producción.
 
 ## Nota
 
