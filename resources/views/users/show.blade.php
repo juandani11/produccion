@@ -2,7 +2,7 @@
 
 @section('title', 'Bienvenido a ' . config('app.name'))
 
-@section('body-class', 'landing-page')
+@section('body-class', 'login-page')
 
 @section('styles')
     <style>

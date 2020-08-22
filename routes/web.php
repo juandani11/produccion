@@ -15,6 +15,10 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::middleware(['auth'])->group(function () {
+
+	//Gestión Administrativa
+	Route::get('/gestion-administrativa', 'HomeController@ges_adm')->name('ges_adm');
+
 	//Bitácora
 	Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index')->name('bitacora')
 		->middleware('can:logs');

@@ -21,6 +21,7 @@
 
                 
         @yield('styles')
+        @yield('estilo')
     </head>
 
     <body class="@yield('body-class')">

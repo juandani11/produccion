@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
-@section('title', 'Bienvenido a ' . config('app.name'))
+@section('title', 'Gestión Administrativa')
 
-@section('body-class', 'login-page')
+@section('body-class', 'landing-page')
 
 @section('styles')
     <style>
@@ -11,10 +11,6 @@
         }
         ul.pagination {
             justify-content: center;
-        }
-        .card {
-            width: 75%;
-            margin-left: 10%;
         }
 
     </style>
@@ -25,8 +21,15 @@
     <div class="container">
 
         <div class="section">
-            <h2 class="title text-center">Usuarios
+            <h2 class="title text-center">Sucursal
+                @can('products.create')
+                    <a href="{{ route('products.create') }}" 
+                    class="btn btn-sm btn-primary pull-right">
+                        Crear Nueva Sucursal
+                    </a>
+                @endcan
             </h2>
+
 
             <div class="card" >
                     <table class="table">
@@ -34,39 +37,37 @@
                             <tr>
                                 <th width="10px">ID</th>
                                 <th>Nombre</th>
-                                <th>Dirección</th>
-                                <th>Teléfono</th>
-                                <th>Email</th>
+                                <th>Descripción</th>
+                                <th>Descripción Larga</th>
                                 <th colspan="3">&nbsp;</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($users as $user)
+                            @foreach($products as $product)
                             <tr>
-                                <td>{{ $user->id }}</td>
-                                <td>{{ $user->name }}</td>
-                                <td>{{ $user->address }}</td>
-                                <td>{{ $user->phone }}</td>
-                                <td>{{ $user->email }}</td>
-                                @can('users.show')
+                                <td>{{ $product->id }}</td>
+                                <td>{{ $product->name }}</td>
+                                <td>{{ $product->description }}</td>
+                                <td>{{ $product->long_description }}</td>
+                                @can('products.show')
                                 <td width="10px">
-                                    <a href="{{ route('users.show', $user->id) }}" 
+                                    <a href="{{ route('products.show', $product->id) }}" 
                                     class="btn btn-sm btn-default">
                                         ver
                                     </a>
                                 </td>
                                 @endcan
-                                @can('users.edit')
+                                @can('products.edit')
                                 <td width="10px">
-                                    <a href="{{ route('users.edit', $user->id) }}" 
+                                    <a href="{{ route('products.edit', $product->id) }}" 
                                     class="btn btn-sm btn-default">
                                         editar
                                     </a>
                                 </td>
                                 @endcan
-                                @can('users.destroy')
+                                @can('products.destroy')
                                 <td width="10px">
-                                    {!! Form::open(['route' => ['users.destroy', $user->id], 
+                                    {!! Form::open(['route' => ['products.destroy', $product->id], 
                                     'method' => 'DELETE']) !!}
                                         <button class="btn btn-sm btn-danger">
                                             Eliminar
@@ -79,7 +80,7 @@
                         </tbody>
                     </table>
                     <div>
-                        {{ $users->links() }}
+                        {{ $products->links() }}
                     </div>
                     
                 </div>

@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
-@section('title', 'Bienvenido a ' . config('app.name'))
+@section('title', 'Gestión Administrativa')
 
-@section('body-class', 'login-page')
+@section('body-class', 'landing-page')
 
 @section('styles')
     <style>
@@ -18,10 +18,6 @@
             padding-bottom: 5px;
             width: 50%;
         }
-        ul {
-            text-align: left !important;
-            padding-left:14% !important;
-        }
     </style>
 @endsection
 
@@ -35,12 +31,11 @@
 
             <div class="tarjeta">
             <div class="card card-nav-tabs text-center">
-            {!! Form::model($user, ['route' => ['users.update', $user->id],
-                    'method' => 'PUT']) !!}
+            {!! Form::model($product, ['route' => ['products.update', $product->id], 'method' => 'PUT']) !!}
 
-                        @include('users.partials.form')
-                        
-                    {!! Form::close() !!}
+                @include('products.partials.form')
+
+                {!! Form::close() !!}
             </div>
             </div>
 
