@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.menu')
 
-@section('title', 'Gestión Administrativa')
+@section('title', 'Gestión Sucursal')
 
 @section('body-class', 'landing-page')
 
@@ -16,14 +16,14 @@
     </style>
 @endsection
 
-@section('content')
+@section('contenido-central')
 <div class="main ">
     <div class="container">
 
         <div class="section">
             <h2 class="title text-center">Sucursal
-                @can('products.create')
-                    <a href="{{ route('products.create') }}" 
+                @can('sucursales.create')
+                    <a href="{{ route('sucursales.create') }}" 
                     class="btn btn-sm btn-primary pull-right">
                         Crear Nueva Sucursal
                     </a>
@@ -36,38 +36,40 @@
                         <thead>
                             <tr>
                                 <th width="10px">ID</th>
+                                <th>Código</th>
                                 <th>Nombre Sucursal</th>
                                 <th>Descripción</th>
-                                <th>Descripción Larga</th>
+                                <th>Dirección</th>
                                 <th colspan="3">&nbsp;</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($products as $product)
+                            @foreach($sucursales as $sucursal)
                             <tr>
-                                <td>{{ $product->id }}</td>
-                                <td>{{ $product->name }}</td>
-                                <td>{{ $product->description }}</td>
-                                <td>{{ $product->long_description }}</td>
-                                @can('products.show')
+                                <td>{{ $sucursal->id_sucursal }}</td>
+                                <td>{{ $sucursal->cod_sucursal }}</td>
+                                <td>{{ $sucursal->nombre_sucursal }}</td>
+                                <td>{{ $sucursal->descripcion}}</td>
+                                <td>{{ $sucursal->direccion }}</td>
+                                @can('sucursal.show')
                                 <td width="10px">
-                                    <a href="{{ route('products.show', $product->id) }}" 
+                                    <a href="{{ route('sucursales.show', $sucursal->id_sucursal) }}" 
                                     class="btn btn-sm btn-default">
                                         ver
                                     </a>
                                 </td>
                                 @endcan
-                                @can('products.edit')
+                                @can('sucursales.edit')
                                 <td width="10px">
-                                    <a href="{{ route('products.edit', $product->id) }}" 
+                                    <a href="{{ route('sucursales.edit', $sucursal->id_sucursal) }}" 
                                     class="btn btn-sm btn-default">
                                         editar
                                     </a>
                                 </td>
                                 @endcan
-                                @can('products.destroy')
+                                @can('sucursal.destroy')
                                 <td width="10px">
-                                    {!! Form::open(['route' => ['products.destroy', $product->id], 
+                                    {!! Form::open(['route' => ['sucursales.destroy', $sucursal->id_sucursal], 
                                     'method' => 'DELETE']) !!}
                                         <button class="btn btn-sm btn-danger">
                                             Eliminar
@@ -80,7 +82,7 @@
                         </tbody>
                     </table>
                     <div>
-                        {{ $products->links() }}
+                        {{ $sucursales->links() }}
                     </div>
                     
                 </div>
@@ -91,5 +93,4 @@
         
 </div>
 
-@include('includes.footer')
 @endsection

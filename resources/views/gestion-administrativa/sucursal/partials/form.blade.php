@@ -1,10 +1,10 @@
 <div class="form-group">
-	{{ Form::label('codigo', 'Código:') }}
-	{{ Form::text('codigo', null, ['class' => 'form-control', 'id' => 'codigo']) }}
+	{{ Form::label('cod_sucursal', 'Código:') }}
+	{{ Form::text('cod_sucursal', null, ['class' => 'form-control', 'id' => 'cod_sucursal']) }}
 </div>
 <div class="form-group">
 	{{ Form::label('nombre_sucursal', 'Nombre de Sucursal:') }}
-	{{ Form::text('nombre_sucursal', null, ['class' => 'form-control', 'id' => 'name']) }}
+	{{ Form::text('nombre_sucursal', null, ['class' => 'form-control', 'id' => 'nombre_sucursal']) }}
 </div>
 <div class="form-group">
 	{{ Form::label('descripcion', 'Descripción:') }}
@@ -13,10 +13,6 @@
 <div class="form-group">
 	{{ Form::label('direccion', 'Dirección:') }}
 	{{ Form::textarea('direccion', null, ['class' => 'form-control','rows' => '5']) }}
-</div>
-<div class="form-group">
-	{{ Form::label('estado_sucursal', 'Estado:') }}
-	{{ Form::textarea('estado_sucursal', null, ['class' => 'form-control', 'rows' => '1']) }}
 </div>
 <div class="form-group">
 	{{ Form::submit('Guardar', ['class' => 'btn btn-sm btn-primary']) }}

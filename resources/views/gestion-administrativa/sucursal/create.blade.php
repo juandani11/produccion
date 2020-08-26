@@ -1,6 +1,6 @@
 @extends('layouts.menu')
 
-@section('title', 'Gestionar Sucursal')
+@section('title', 'Crear Nueva Sucursal')
 
 @section('body-class', 'landing-page')
 
@@ -22,7 +22,7 @@
     </style>
 @endsection
 
-@section('content')
+@section('contenido-central')
 <div class="main ">
     <div class="container">
 
@@ -32,7 +32,7 @@
 
             <div class="tarjeta">
             <div class="card card-nav-tabs text-center">
-                {!! Form::open(['route' => ['products.store']]) !!}
+                {!! Form::open(['route' => ['sucursales.store']]) !!}
 
                 @include('gestion-administrativa.sucursal.partials.form')
 
@@ -45,6 +45,4 @@
     </div>
         
 </div>
-
-@include('includes.footer')
 @endsection

@@ -80,4 +80,28 @@ Route::middleware(['auth'])->group(function () {
 
 	Route::get('products/{product}/edit', 'ProductController@edit')->name('products.edit')
 		->middleware('can:products.edit');
+
+
+	//Sucursal
+	Route::post('sucursales/store', 'SucursalController@store')->name('sucursales.store')
+		->middleware('can:sucursal.create');
+
+	Route::get('sucursales', 'SucursalController@index')->name('sucursales.index')
+		->middleware('can:sucursales.index');
+	
+	Route::get('sucursales/create', 'SucursalController@create')->name('sucursales.create')
+		->middleware('can:sucursales.create');
+
+	Route::put('sucursales/{id_sucursal}', 'SucursalController@update')->name('sucursales.update')
+		->middleware('can:sucursales.edit');
+
+	Route::get('sucursales/{id_sucursal}', 'SucursalController@show')->name('sucursales.show')
+		->middleware('can:sucursales.show');
+
+	Route::delete('sucursales/{id_sucursal}', 'SucursalController@destroy')->name('sucursales.destroy')
+		->middleware('can:sucursales.destroy');
+
+	Route::get('sucursales/{id_sucursal}/edit', 'SucursalController@edit')->name('sucursales.edit')
+		->middleware('can:sucursales.edit');
+	
 });

@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.menu')
 
-@section('title', 'Gestión Administrativa')
+@section('title', 'Editar Sucursal')
 
 @section('body-class', 'landing-page')
 
@@ -21,7 +21,7 @@
     </style>
 @endsection
 
-@section('content')
+@section('contenido-central')
 <div class="main ">
     <div class="container">
 
@@ -31,9 +31,9 @@
 
             <div class="tarjeta">
             <div class="card card-nav-tabs text-center">
-            {!! Form::model($product, ['route' => ['products.update', $product->id], 'method' => 'PUT']) !!}
+            {!! Form::model($sucursal, ['route' => ['sucursales.update', $sucursal->id_sucursal], 'method' => 'PUT']) !!}
 
-                @include('products.partials.form')
+                @include('gestion-administrativa.sucursal.partials.form')
 
                 {!! Form::close() !!}
             </div>
@@ -44,6 +44,4 @@
     </div>
         
 </div>
-
-@include('includes.footer')
 @endsection

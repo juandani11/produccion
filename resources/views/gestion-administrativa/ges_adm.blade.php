@@ -42,7 +42,7 @@
 
   <div class="col-md-3">
       <div class="info">
-          <a href="">
+          <a href="{{ route('sucursales.index') }}">
               <div class="icon icon-danger">
                   <i class="material-icons">assignment</i>
               </div>
