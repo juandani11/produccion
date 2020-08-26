@@ -36,7 +36,7 @@
                         <thead>
                             <tr>
                                 <th width="10px">ID</th>
-                                <th>Nombre</th>
+                                <th>Nombre Sucursal</th>
                                 <th>Descripción</th>
                                 <th>Descripción Larga</th>
                                 <th colspan="3">&nbsp;</th>

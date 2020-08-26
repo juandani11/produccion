@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.menu')
 
-@section('title', 'Gestión Administrativa')
+@section('title', 'Gestionar Sucursal')
 
 @section('body-class', 'landing-page')
 
@@ -34,7 +34,7 @@
             <div class="card card-nav-tabs text-center">
                 {!! Form::open(['route' => ['products.store']]) !!}
 
-                @include('products.partials.form')
+                @include('gestion-administrativa.sucursal.partials.form')
 
                 {!! Form::close() !!}
             </div>
