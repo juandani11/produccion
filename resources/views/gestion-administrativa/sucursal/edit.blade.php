@@ -25,11 +25,7 @@
 <div class="main ">
     <div class="container">
 
-        <div class="section">
-            <br>
-            <br>
-
-            <div class="tarjeta">
+        <div class="tarjeta">
             <div class="card card-nav-tabs text-center">
             {!! Form::model($sucursal, ['route' => ['sucursales.update', $sucursal->id_sucursal], 'method' => 'PUT']) !!}
 
@@ -37,8 +33,6 @@
 
                 {!! Form::close() !!}
             </div>
-            </div>
-
         </div>
 
     </div>

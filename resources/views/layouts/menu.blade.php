@@ -70,11 +70,11 @@
         <header class="">Sistema MRP</header>
         <ul class="nav flex-column">
           <li>
-            <a class="nav-link" href="#">Gestión Administrativa</a>
+            <a class="nav-link" href="{{ route('ges_adm') }}">Gestión Administrativa</a>
             <ul class="nav flex-column">
-                <li><a class="nav-pills" href="#">Departamento </a></li>
+                <li><a class="nav-pills" href="{{ route('departamentos.index') }}">Departamento </a></li>
                 <li><a class="nav-pills" href="#">Área </a></li>
-                <li><a class="nav-pills" href="#">Sucursal </a></li>
+                <li><a class="nav-pills" href="{{ route('sucursales.index') }}">Sucursal </a></li>
                 <li><a class="nav-pills" href="#">Cargo </a></li>
                 <li><a class="nav-pills" href="#">Empleado </a></li>
             </ul>

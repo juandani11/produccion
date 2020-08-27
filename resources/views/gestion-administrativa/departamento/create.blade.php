@@ -1,6 +1,6 @@
 @extends('layouts.menu')
 
-@section('title', 'Crear Nueva Sucursal')
+@section('title', 'Crear Nuevo Departamento')
 
 @section('body-class', 'landing-page')
 
@@ -28,9 +28,9 @@
 
         <div class="tarjeta">
             <div class="card card-nav-tabs text-center">
-                {!! Form::open(['route' => ['sucursales.store']]) !!}
+                {!! Form::open(['route' => ['departamentos.store']]) !!}
 
-                @include('gestion-administrativa.sucursal.partials.form')
+                @include('gestion-administrativa.departamento.partials.form')
 
                 {!! Form::close() !!}
             </div>

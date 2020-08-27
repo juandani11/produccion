@@ -1,6 +1,6 @@
 @extends('layouts.menu')
 
-@section('title', 'Gestión Sucursal')
+@section('title', 'Gestión Departamento')
 
 @section('body-class', 'landing-page')
 
@@ -24,11 +24,11 @@
     <div class="container">
 
         <div class="section">
-            <h2 class="title text-center">Sucursal
-                @can('sucursales.create')
-                    <a href="{{ route('sucursales.create') }}" 
+            <h2 class="title text-center">Departamento
+                @can('departamentos.create')
+                    <a href="{{ route('departamentos.create') }}" 
                     class="btn btn-sm btn-primary pull-right">
-                        Crear Nueva Sucursal
+                        Crear Nuevo Departamento
                     </a>
                 @endcan
             </h2>
@@ -40,39 +40,37 @@
                             <tr>
                                 <th width="10px">ID</th>
                                 <th>Código</th>
-                                <th>Nombre Sucursal</th>
-                                <th>Descripción</th>
-                                <th>Dirección</th>
+                                <th>Nombre Departamento</th>
+                                <th>Id Sucursal</th>
                                 <th colspan="3">&nbsp;</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($sucursales as $sucursal)
+                            @foreach($departamentos as $departamento)
                             <tr>
-                                <td>{{ $sucursal->id_sucursal }}</td>
-                                <td>{{ $sucursal->cod_sucursal }}</td>
-                                <td>{{ $sucursal->nombre_sucursal }}</td>
-                                <td>{{ $sucursal->descripcion}}</td>
-                                <td>{{ $sucursal->direccion }}</td>
-                                @can('sucursal.show')
+                                <td>{{ $departamento->id_departamento }}</td>
+                                <td>{{ $departamento->cod_departamento }}</td>
+                                <td>{{ $departamento->nombre_departamento }}</td>
+                                <td>{{ $departamento->id_sucursal_departamento}}</td>
+                                @can('departamento.show')
                                 <td width="10px">
-                                    <a href="{{ route('sucursales.show', $sucursal->id_sucursal) }}" 
+                                    <a href="{{ route('departamentos.show', $departamento->id_departamento) }}" 
                                     class="btn btn-sm btn-default">
                                         ver
                                     </a>
                                 </td>
                                 @endcan
-                                @can('sucursales.edit')
+                                @can('departamentos.edit')
                                 <td width="10px">
-                                    <a href="{{ route('sucursales.edit', $sucursal->id_sucursal) }}" 
+                                    <a href="{{ route('departamentos.edit', $departamento->id_departamento) }}" 
                                     class="btn btn-sm btn-default">
                                         editar
                                     </a>
                                 </td>
                                 @endcan
-                                @can('sucursal.destroy')
+                                @can('departamento.destroy')
                                 <td width="10px">
-                                    {!! Form::open(['route' => ['sucursales.destroy', $sucursal->id_sucursal], 
+                                    {!! Form::open(['route' => ['departamentos.destroy', $departamento->id_departamento], 
                                     'method' => 'DELETE']) !!}
                                         <button class="btn btn-sm btn-danger">
                                             Eliminar
@@ -85,7 +83,7 @@
                         </tbody>
                     </table>
                     <div>
-                        {{ $sucursales->links() }}
+                        {{ $departamentos->links() }}
                     </div>
                     
                 </div>

@@ -1,6 +1,6 @@
 @extends('layouts.menu')
 
-@section('title', 'Crear Nueva Sucursal')
+@section('title', 'Editar Departamento')
 
 @section('body-class', 'landing-page')
 
@@ -18,7 +18,6 @@
             padding-bottom: 5px;
             width: 50%;
         }
-
     </style>
 @endsection
 
@@ -28,13 +27,14 @@
 
         <div class="tarjeta">
             <div class="card card-nav-tabs text-center">
-                {!! Form::open(['route' => ['sucursales.store']]) !!}
+            {!! Form::model($departamento, ['route' => ['departamentos.update', $departamento->id_departamento], 'method' => 'PUT']) !!}
 
-                @include('gestion-administrativa.sucursal.partials.form')
+                @include('gestion-administrativa.departamento.partials.form')
 
                 {!! Form::close() !!}
             </div>
         </div>
+
     </div>
         
 </div>

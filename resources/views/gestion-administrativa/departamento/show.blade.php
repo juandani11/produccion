@@ -1,6 +1,6 @@
 @extends('layouts.menu')
 
-@section('title', 'Sucursal')
+@section('title', 'Departamento')
 
 @section('body-class', 'landing-page')
 
@@ -35,28 +35,24 @@
 <div class="tarjeta">
     <div class="card col-md-6">
         <div class="card-title btn btn-primary">
-            Sucursal
+            Departamento
         </div>
         <div class="card-body">
             <div class="detalle">
                 <h4 class="item">Nombre:</h4>
-                <p class="item">{{ $sucursal->nombre_sucursal }}</p>
+                <p class="item">{{ $departamento->nombre_departamento }}</p>
             </div>
             <div class="detalle">
                 <h4 class="item">Código:</h4>
-                <p class="item">{{ $sucursal->cod_sucursal }}</p>
+                <p class="item">{{ $departamento->cod_departamento }}</p>
             </div>
             <div class="detalle">
-                <h4 class="item">Descripción: </h4>
-                <p class="item">{{ $sucursal->descripcion }}</p>
-            </div>
-            <div class="detalle">
-                <h4 class="item">Dirección: </h4>
-                <p class="item">{{ $sucursal->direccion }}</p>
+                <h5 class="item">Sucursal pertenece: </h5>
+                <p class="item">{{ $departamento->id_sucursal_departamento }}</p>
             </div>
         </div>
         <div class=" text-muted">
-            Código: {{ $sucursal->codigo }} 
+            Código: {{ $departamento->id_departamento }} 
         </div>
     </div>
 </div>

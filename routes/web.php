@@ -84,7 +84,7 @@ Route::middleware(['auth'])->group(function () {
 
 	//Sucursal
 	Route::post('sucursales/store', 'SucursalController@store')->name('sucursales.store')
-		->middleware('can:sucursal.create');
+		->middleware('can:sucursales.create');
 
 	Route::get('sucursales', 'SucursalController@index')->name('sucursales.index')
 		->middleware('can:sucursales.index');
@@ -103,5 +103,27 @@ Route::middleware(['auth'])->group(function () {
 
 	Route::get('sucursales/{id_sucursal}/edit', 'SucursalController@edit')->name('sucursales.edit')
 		->middleware('can:sucursales.edit');
+
+	//Departamento
+	Route::post('departamentos/store', 'DepartamentoController@store')->name('departamentos.store')
+		->middleware('can:departamentos.create');
+
+	Route::get('departamentos', 'DepartamentoController@index')->name('departamentos.index')
+		->middleware('can:departamentos.index');
+	
+	Route::get('departamentos/create', 'DepartamentoController@create')->name('departamentos.create')
+		->middleware('can:departamentos.create');
+
+	Route::put('departamentos/{id_departamento}', 'DepartamentoController@update')->name('departamentos.update')
+		->middleware('can:departamentos.edit');
+
+	Route::get('departamentos/{id_departamento}', 'DepartamentoController@show')->name('departamentos.show')
+		->middleware('can:departamentos.show');
+
+	Route::delete('departamentos/{id_departamento}', 'DepartamentoController@destroy')->name('departamentos.destroy')
+		->middleware('can:departamentos.destroy');
+
+	Route::get('departamentos/{id_departamento}/edit', 'DepartamentoController@edit')->name('departamentos.edit')
+		->middleware('can:departamentos.edit');
 	
 });

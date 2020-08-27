@@ -8,11 +8,11 @@
 </div>
 <div class="form-group">
 	{{ Form::label('descripcion', 'Descripción:') }}
-	{{ Form::textarea('descripcion', null, ['class' => 'form-control','rows' => '3']) }}
+	{{ Form::textarea('descripcion', null, ['class' => 'form-control','rows' => '1']) }}
 </div>
 <div class="form-group">
 	{{ Form::label('direccion', 'Dirección:') }}
-	{{ Form::textarea('direccion', null, ['class' => 'form-control','rows' => '5']) }}
+	{{ Form::textarea('direccion', null, ['class' => 'form-control','rows' => '1']) }}
 </div>
 <div class="form-group">
 	{{ Form::submit('Guardar', ['class' => 'btn btn-sm btn-primary']) }}
