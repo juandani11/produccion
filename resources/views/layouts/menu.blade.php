@@ -73,10 +73,10 @@
             <a class="nav-link" href="{{ route('ges_adm') }}">Gestión Administrativa</a>
             <ul class="nav flex-column">
                 <li><a class="nav-pills" href="{{ route('departamentos.index') }}">Departamento </a></li>
-                <li><a class="nav-pills" href="#">Área </a></li>
+                <li><a class="nav-pills" href="{{ route('areas.index') }}">Área </a></li>
                 <li><a class="nav-pills" href="{{ route('sucursales.index') }}">Sucursal </a></li>
-                <li><a class="nav-pills" href="#">Cargo </a></li>
-                <li><a class="nav-pills" href="#">Empleado </a></li>
+                <li><a class="nav-pills" href="{{ route('cargos.index') }}">Cargo </a></li>
+                <li><a class="nav-pills" href="{{ route('empleados.index') }}">Empleado </a></li>
             </ul>
           </li> 
             <li>
@@ -99,7 +99,7 @@
         </ul>
       </nav>
 
-      <aside>aside</aside>
+      <aside id="aside">aside</aside>
    </div>
 
   

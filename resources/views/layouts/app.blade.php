@@ -129,7 +129,7 @@
         </nav>
        
         @if (session('info'))
-        <div class="alert alert-info" style="margin-top: 6rem;">
+        <div class="alert alert-info" style="margin-top: 15%;">
             <div class="container">
                 <div class="alert-icon">
                     <i class="material-icons">info_outline</i>

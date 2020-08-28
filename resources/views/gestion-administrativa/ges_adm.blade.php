@@ -31,7 +31,7 @@
 
   <div class="col-md-3">
       <div class="info">
-          <a class="" href="#">
+          <a class="" href="{{ route('areas.index') }}">
               <div class="icon icon-success">
                   <i class="material-icons">attach_money</i>
               </div>
@@ -53,7 +53,7 @@
   
   <div class="col-md-3">
       <div class="info">
-          <a href="">
+          <a href="{{ route('cargos.index') }}">
               <div class="icon icon-warning">
                   <i class="material-icons">assignment_late</i>
               </div>
@@ -64,7 +64,7 @@
 
   <div class="col-md-3">
       <div class="info">
-          <a href="">
+          <a href="{{ route('empleados.index') }}">
               <div class="icon icon-info">
                   <i class="material-icons">shopping_bag</i>
               </div>

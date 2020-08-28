@@ -52,7 +52,7 @@
                                 <td>{{ $departamento->cod_departamento }}</td>
                                 <td>{{ $departamento->nombre_departamento }}</td>
                                 <td>{{ $departamento->id_sucursal_departamento}}</td>
-                                @can('departamento.show')
+                                @can('departamentos.show')
                                 <td width="10px">
                                     <a href="{{ route('departamentos.show', $departamento->id_departamento) }}" 
                                     class="btn btn-sm btn-default">
@@ -68,7 +68,7 @@
                                     </a>
                                 </td>
                                 @endcan
-                                @can('departamento.destroy')
+                                @can('departamentos.destroy')
                                 <td width="10px">
                                     {!! Form::open(['route' => ['departamentos.destroy', $departamento->id_departamento], 
                                     'method' => 'DELETE']) !!}

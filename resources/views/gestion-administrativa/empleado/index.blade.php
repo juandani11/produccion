@@ -1,6 +1,6 @@
 @extends('layouts.menu')
 
-@section('title', 'Gestión Sucursal')
+@section('title', 'Gestión Empleado')
 
 @section('body-class', 'landing-page')
 
@@ -24,11 +24,11 @@
     <div class="container">
 
         <div class="section">
-            <h2 class="title text-center">Sucursal
-                @can('sucursales.create')
-                    <a href="{{ route('sucursales.create') }}" 
+            <h2 class="title text-center">Empleado
+                @can('empleados.create')
+                    <a href="{{ route('empleados.create') }}" 
                     class="btn btn-sm btn-primary pull-right">
-                        Crear Nueva Sucursal
+                        Crear Nuevo Empleado
                     </a>
                 @endcan
             </h2>
@@ -40,39 +40,39 @@
                             <tr>
                                 <th width="10px">ID</th>
                                 <th>Código</th>
-                                <th>Nombre Sucursal</th>
-                                <th>Descripción</th>
+                                <th>Nombre Empleado</th>
+                                <th>Cedula</th>
                                 <th>Dirección</th>
                                 <th colspan="3">&nbsp;</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($sucursales as $sucursal)
+                            @foreach($empleados as $empleado)
                             <tr>
-                                <td>{{ $sucursal->id_sucursal }}</td>
-                                <td>{{ $sucursal->cod_sucursal }}</td>
-                                <td>{{ $sucursal->nombre_sucursal }}</td>
-                                <td>{{ $sucursal->descripcion}}</td>
-                                <td>{{ $sucursal->direccion }}</td>
-                                @can('sucursales.show')
+                                <td>{{ $empleado->id_empleado }}</td>
+                                <td>{{ $empleado->cod_empleado }}</td>
+                                <td>{{ $empleado->nombre_empleado }}</td>
+                                <td>{{ $empleado->cedula_empleado }}</td>
+                                <td>{{ $empleado->direccion_empleado}}</td>
+                                @can('empleados.show')
                                 <td width="10px">
-                                    <a href="{{ route('sucursales.show', $sucursal->id_sucursal) }}" 
+                                    <a href="{{ route('empleados.show', $empleado->id_empleado) }}" 
                                     class="btn btn-sm btn-default">
                                         ver
                                     </a>
                                 </td>
                                 @endcan
-                                @can('sucursales.edit')
+                                @can('empleados.edit')
                                 <td width="10px">
-                                    <a href="{{ route('sucursales.edit', $sucursal->id_sucursal) }}" 
+                                    <a href="{{ route('empleados.edit', $empleado->id_empleado) }}" 
                                     class="btn btn-sm btn-default">
                                         editar
                                     </a>
                                 </td>
                                 @endcan
-                                @can('sucursales.destroy')
+                                @can('empleados.destroy')
                                 <td width="10px">
-                                    {!! Form::open(['route' => ['sucursales.destroy', $sucursal->id_sucursal], 
+                                    {!! Form::open(['route' => ['empleados.destroy', $empleado->id_empleado], 
                                     'method' => 'DELETE']) !!}
                                         <button class="btn btn-sm btn-danger">
                                             Eliminar
@@ -85,7 +85,7 @@
                         </tbody>
                     </table>
                     <div>
-                        {{ $sucursales->links() }}
+                        {{ $empleados->links() }}
                     </div>
                     
                 </div>

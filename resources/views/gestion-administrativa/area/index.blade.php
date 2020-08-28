@@ -1,6 +1,6 @@
 @extends('layouts.menu')
 
-@section('title', 'Gestión Sucursal')
+@section('title', 'Gestión Area')
 
 @section('body-class', 'landing-page')
 
@@ -24,11 +24,11 @@
     <div class="container">
 
         <div class="section">
-            <h2 class="title text-center">Sucursal
-                @can('sucursales.create')
-                    <a href="{{ route('sucursales.create') }}" 
+            <h2 class="title text-center">Area
+                @can('areas.create')
+                    <a href="{{ route('areas.create') }}" 
                     class="btn btn-sm btn-primary pull-right">
-                        Crear Nueva Sucursal
+                        Crear Nueva Area
                     </a>
                 @endcan
             </h2>
@@ -40,39 +40,37 @@
                             <tr>
                                 <th width="10px">ID</th>
                                 <th>Código</th>
-                                <th>Nombre Sucursal</th>
-                                <th>Descripción</th>
-                                <th>Dirección</th>
+                                <th>Nombre Area</th>
+                                <th>Id Departamento</th>
                                 <th colspan="3">&nbsp;</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($sucursales as $sucursal)
+                            @foreach($areas as $area)
                             <tr>
-                                <td>{{ $sucursal->id_sucursal }}</td>
-                                <td>{{ $sucursal->cod_sucursal }}</td>
-                                <td>{{ $sucursal->nombre_sucursal }}</td>
-                                <td>{{ $sucursal->descripcion}}</td>
-                                <td>{{ $sucursal->direccion }}</td>
-                                @can('sucursales.show')
+                                <td>{{ $area->id_area }}</td>
+                                <td>{{ $area->cod_area }}</td>
+                                <td>{{ $area->nombre_area }}</td>
+                                <td>{{ $area->id_departamento_area}}</td>
+                                @can('areas.show')
                                 <td width="10px">
-                                    <a href="{{ route('sucursales.show', $sucursal->id_sucursal) }}" 
+                                    <a href="{{ route('areas.show', $area->id_area) }}" 
                                     class="btn btn-sm btn-default">
                                         ver
                                     </a>
                                 </td>
                                 @endcan
-                                @can('sucursales.edit')
+                                @can('areas.edit')
                                 <td width="10px">
-                                    <a href="{{ route('sucursales.edit', $sucursal->id_sucursal) }}" 
+                                    <a href="{{ route('areas.edit', $area->id_area) }}" 
                                     class="btn btn-sm btn-default">
                                         editar
                                     </a>
                                 </td>
                                 @endcan
-                                @can('sucursales.destroy')
+                                @can('areas.destroy')
                                 <td width="10px">
-                                    {!! Form::open(['route' => ['sucursales.destroy', $sucursal->id_sucursal], 
+                                    {!! Form::open(['route' => ['areas.destroy', $area->id_area], 
                                     'method' => 'DELETE']) !!}
                                         <button class="btn btn-sm btn-danger">
                                             Eliminar
@@ -85,7 +83,7 @@
                         </tbody>
                     </table>
                     <div>
-                        {{ $sucursales->links() }}
+                        {{ $areas->links() }}
                     </div>
                     
                 </div>

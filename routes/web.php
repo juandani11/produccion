@@ -125,5 +125,71 @@ Route::middleware(['auth'])->group(function () {
 
 	Route::get('departamentos/{id_departamento}/edit', 'DepartamentoController@edit')->name('departamentos.edit')
 		->middleware('can:departamentos.edit');
+		
+	//Area
+	Route::post('areas/store', 'AreaController@store')->name('areas.store')
+		->middleware('can:areas.create');
+
+	Route::get('areas', 'AreaController@index')->name('areas.index')
+		->middleware('can:areas.index');
+	
+	Route::get('areas/create', 'AreaController@create')->name('areas.create')
+		->middleware('can:areas.create');
+
+	Route::put('areas/{id_area}', 'AreaController@update')->name('areas.update')
+		->middleware('can:areas.edit');
+
+	Route::get('areas/{id_area}', 'AreaController@show')->name('areas.show')
+		->middleware('can:areas.show');
+
+	Route::delete('areas/{id_area}', 'AreaController@destroy')->name('areas.destroy')
+		->middleware('can:areas.destroy');
+
+	Route::get('areas/{id_area}/edit', 'AreaController@edit')->name('areas.edit')
+		->middleware('can:areas.edit');
+	
+	//Cargo
+	Route::post('cargos/store', 'CargoController@store')->name('cargos.store')
+		->middleware('can:cargos.create');
+
+	Route::get('cargos', 'CargoController@index')->name('cargos.index')
+		->middleware('can:cargos.index');
+	
+	Route::get('cargos/create', 'CargoController@create')->name('cargos.create')
+		->middleware('can:cargos.create');
+
+	Route::put('cargos/{id_cargo}', 'CargoController@update')->name('cargos.update')
+		->middleware('can:cargos.edit');
+
+	Route::get('cargos/{id_cargo}', 'CargoController@show')->name('cargos.show')
+		->middleware('can:cargos.show');
+
+	Route::delete('cargos/{id_cargo}', 'CargoController@destroy')->name('cargos.destroy')
+		->middleware('can:cargos.destroy');
+
+	Route::get('cargos/{id_cargo}/edit', 'CargoController@edit')->name('cargos.edit')
+		->middleware('can:cargos.edit');
+
+	//Empleado
+	Route::post('empleados/store', 'EmpleadoController@store')->name('empleados.store')
+		->middleware('can:empleados.create');
+
+	Route::get('empleados', 'EmpleadoController@index')->name('empleados.index')
+		->middleware('can:empleados.index');
+	
+	Route::get('empleados/create', 'EmpleadoController@create')->name('empleados.create')
+		->middleware('can:empleados.create');
+
+	Route::put('empleados/{id_empleado}', 'EmpleadoController@update')->name('empleados.update')
+		->middleware('can:empleados.edit');
+
+	Route::get('empleados/{id_empleado}', 'EmpleadoController@show')->name('empleados.show')
+		->middleware('can:empleados.show');
+
+	Route::delete('empleados/{id_empleado}', 'EmpleadoController@destroy')->name('empleados.destroy')
+		->middleware('can:empleados.destroy');
+
+	Route::get('empleados/{id_empleado}/edit', 'EmpleadoController@edit')->name('empleados.edit')
+		->middleware('can:empleados.edit');
 	
 });
