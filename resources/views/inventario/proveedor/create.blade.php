@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.menu')
 
 @section('title', 'Bienvenido a ' . config('app.name'))
 
@@ -22,7 +22,7 @@
     </style>
 @endsection
 
-@section('content')
+@section('contenido-central')
 <div class="main ">
     <div class="container">
 
