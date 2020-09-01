@@ -193,5 +193,74 @@ Route::middleware(['auth'])->group(function () {
 
 	Route::get('empleados/{id_empleado}/edit', 'EmpleadoController@edit')->name('empleados.edit')
 		->middleware('can:empleados.edit');
-	
+
+    //proveedor
+    Route::get('inventario/proveedor', 'ProveedorController@index')->name('proveedor.index')
+        ->middleware('can:proveedor.index');
+
+    Route::get('proveedor/{proveedor}', 'ProveedorController@show')->name('proveedor.show')
+        ->middleware('can:proveedor.show');
+
+    Route::get('proveedor/{proveedor}/edit', 'ProveedorController@edit')->name('proveedor.edit')
+        ->middleware('can:proveedor.edit');
+
+    Route::delete('proveedor/{proveedor}', 'ProveedorController@destroy')->name('proveedor.destroy')
+        ->middleware('can:proveedor.destroy');
+
+    Route::put('proveedor/{proveedor}', 'ProveedorController@update')->name('proveedor.update')
+        ->middleware('can:proveedor.edit');
+
+    Route::get('inventario/proveedor/create', 'ProveedorController@create')->name('proveedor.create')
+        ->middleware('can:proveedor.create');
+
+    Route::post('proveedor/store', 'ProveedorController@store')->name('proveedor.store')
+        ->middleware('can:proveedor.create');
+
+    //Materia Prima
+    Route::get('inventario/materia_prima', 'MateriaPrimaController@index')->name('materia_prima.index')
+        ->middleware('can:materia_prima.index');
+
+    Route::get('materia_prima/{materia_prima}', 'MateriaPrimaController@show')->name('materia_prima.show')
+        ->middleware('can:materia_prima.show');
+
+    Route::get('materia_prima/{materia_prima}/edit', 'MateriaPrimaController@edit')->name('materia_prima.edit')
+        ->middleware('can:materia_prima.edit');
+
+    Route::delete('materia_prima/{materia_prima}', 'MateriaPrimaController@destroy')->name('materia_prima.destroy')
+        ->middleware('can:materia_prima.destroy');
+
+    Route::put('materia_prima/{materia_prima}', 'MateriaPrimaController@update')->name('materia_prima.update')
+        ->middleware('can:materia_prima.edit');
+
+    Route::get('inventario/materia_prima/create', 'MateriaPrimaController@create')->name('materia_prima.create')
+        ->middleware('can:materia_prima.create');
+
+    Route::post('materia_prima/store', 'MateriaPrimaController@store')->name('materia_prima.store')
+        ->middleware('can:materia_prima.create');
+
+    //Articulo
+    Route::get('inventario/articulo', 'ArticuloController@index')->name('articulo.index')
+        ->middleware('can:articulo.index');
+
+    Route::get('articulo/{articulo}', 'ArticuloController@show')->name('articulo.show')
+        ->middleware('can:articulo.show');
+
+    Route::get('articulo/{articulo}/edit', 'ArticuloController@edit')->name('articulo.edit')
+        ->middleware('can:articulo.edit');
+
+    Route::delete('articulo/{articulo}', 'ArticuloController@destroy')->name('articulo.destroy')
+        ->middleware('can:articulo.destroy');
+
+    Route::put('articulo/{articulo}', 'ArticuloController@update')->name('articulo.update')
+        ->middleware('can:articulo.edit');
+
+    Route::get('inventario/articulo/create', 'ArticuloController@create')->name('articulo.create')
+        ->middleware('can:articulo.create');
+
+    Route::post('articulo/store', 'ArticuloController@store')->name('articulo.store')
+        ->middleware('can:articulo.create');
+
 });
+
+
+
