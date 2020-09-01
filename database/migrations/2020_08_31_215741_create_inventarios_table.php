@@ -17,7 +17,7 @@ class CreateInventariosTable extends Migration
             $table->bigIncrements('id');
             $table->timestamps();
             $table->integer('cantidad');
-            $table->boolean('estado');
+            $table->boolean('estado')->default('1');
             $table->string('reserva');
             $table->string('unidad_medida');
             $table->string('disponibilidad');

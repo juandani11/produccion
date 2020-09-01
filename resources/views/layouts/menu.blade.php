@@ -88,6 +88,7 @@
                 <ul class="nav flex-column">
                     <li><a class="nav-pills" href="{{route('proveedor.index')}}">Proveedor </a></li>
                     <li><a class="nav-pills" href="{{route('materia_prima.index')}}">Materia Prima </a></li>
+                    <li><a class="nav-pills" href="{{route('articulo.index')}}">Articulo </a></li>
                 </ul>
             </li> 
             <li>

@@ -1,6 +1,6 @@
 @extends('layouts.menu')
 
-@section('title', 'Bienvenido a ' . config('app.name'))
+@section('title', 'Gestion articulos ')
 
 @section('body-class', 'landing-page')
 
@@ -11,7 +11,9 @@
         }
         ul.pagination {
             justify-content: center;
-        }
+        }.section {
+             padding: 5px !important;
+         }
 
     </style>
 @endsection
@@ -21,14 +23,14 @@
     <div class="container">
 
         <div class="section">
-            <h2 class="title text-center">Materia Prima
-
-                @can('proveedor.create')
-                    <a href="{{ route('materia_prima.create') }}"
+            <h2 class="title text-center">Articulo
+                @can('articulo.create')
+                    <a href="{{ route('articulo.create') }}"
                     class="btn btn-sm btn-primary pull-right">
-                        Crear Nueva Materia Prima...
+                        Crear Nuevo Articulo...
                     </a>
                 @endcan
+
             </h2>
 
 
@@ -38,48 +40,46 @@
                             <tr>
                                 <th width="10px">ID</th>
                                 <th>Nombre</th>
-                                <th>Precio</th>
+                                <th>Precio venta</th>
                                 <th>Codigo</th>
-                                <th>Proveedor</th>
                                 <th>Estado</th>
                                 <th colspan="3">&nbsp;</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($materia_primas as $materia_prima)
+                            @foreach($articulos as $articulo)
                             <tr>
-                                <td>{{ $materia_prima->id }}</td>
-                                <td>{{ $materia_prima->nombre }}</td>
-                                <td>{{ $materia_prima->precio }}</td>
-                                <td>{{ $materia_prima->codigo }}</td>
-                                <td>{{ $materia_prima->proveedor->nombre }}</td>
+                                <td>{{ $articulo->id }}</td>
+                                <td>{{ $articulo->nombre }}</td>
+                                <td>{{ $articulo->precio_venta }}</td>
+                                <td>{{ $articulo->codigo }}</td>
                                 <td class="list-group-item">
                                     <p class="list-group-item-text">
-                                        @if($materia_prima->estado = 1)
+                                        @if($articulo->estado = 1)
                                             <span class="label label-success">Activo</span>
                                         @else
                                             <span class="label label-danger">Inactivo</span>
                                         @endif
                                     </p></td>
-                                @can('materia_prima.show')
+                                @can('articulo.show')
                                 <td width="10px">
-                                    <a href="{{ route('materia_prima.show', $materia_prima->id) }}"
+                                    <a href="{{ route('articulo.show', $articulo->id) }}"
                                     class="btn btn-sm btn-default">
                                         ver
                                     </a>
                                 </td>
                                 @endcan
-                                @can('materia_prima.edit')
+                                @can('articulo.edit')
                                 <td width="10px">
-                                    <a href="{{ route('materia_prima.edit', $materia_prima->id) }}"
+                                    <a href="{{ route('articulo.edit', $articulo->id) }}"
                                     class="btn btn-sm btn-default">
                                         editar
                                     </a>
                                 </td>
                                 @endcan
-                                @can('materia_prima.destroy')
+                                @can('articulo.destroy')
                                 <td width="10px">
-                                    {!! Form::open(['route' => ['materia_prima.destroy', $materia_prima->id],
+                                    {!! Form::open(['route' => ['articulo.destroy', $articulo->id],
                                     'method' => 'DELETE']) !!}
                                         <button class="btn btn-sm btn-danger">
                                             Eliminar
@@ -92,7 +92,7 @@
                         </tbody>
                     </table>
                     <div>
-                        {{ $materia_primas->links() }}
+                        {{ $articulos->links() }}
                     </div>
                     
                 </div>

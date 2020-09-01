@@ -236,7 +236,28 @@ Route::middleware(['auth'])->group(function () {
     Route::post('materia_prima/store', 'MateriaPrimaController@store')->name('materia_prima.store')
         ->middleware('can:materia_prima.create');
 
-    //almacen
+    //Articulo
+    Route::get('inventario/articulo', 'ArticuloController@index')->name('articulo.index')
+        ->middleware('can:articulo.index');
+
+    Route::get('articulo/{articulo}', 'ArticuloController@show')->name('articulo.show')
+        ->middleware('can:articulo.show');
+
+    Route::get('articulo/{articulo}/edit', 'ArticuloController@edit')->name('articulo.edit')
+        ->middleware('can:articulo.edit');
+
+    Route::delete('articulo/{articulo}', 'ArticuloController@destroy')->name('articulo.destroy')
+        ->middleware('can:articulo.destroy');
+
+    Route::put('articulo/{articulo}', 'ArticuloController@update')->name('articulo.update')
+        ->middleware('can:articulo.edit');
+
+    Route::get('inventario/articulo/create', 'ArticuloController@create')->name('articulo.create')
+        ->middleware('can:articulo.create');
+
+    Route::post('articulo/store', 'ArticuloController@store')->name('articulo.store')
+        ->middleware('can:articulo.create');
+
 });
 
 
