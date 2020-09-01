@@ -81,6 +81,10 @@
           </li> 
             <li>
                 <a class="nav-link" href="#flex_direction">Nómina</a>
+                <ul class="nav flex-column">
+                    <li><a class="nav-pills" href="{{route('proveedor.index')}}">Proveedor </a></li>
+                    <li><a class="nav-pills" href="{{route('materia_prima.index')}}">Materia Prima </a></li>
+                </ul>
             </li>
             <li>
               <a class="nav-link" href="#justify_content">Inventarios</a>
