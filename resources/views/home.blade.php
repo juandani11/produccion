@@ -251,18 +251,7 @@
 
                     <div class="col-md-4">
                         <div class="info">
-                            <a class="" href="#">
-                                <div class="icon icon-success">
-                                    <i class="material-icons">attach_money</i>
-                                </div>
-                                <h4 class="info-title">Contabilidad</h4>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4">
-                        <div class="info">
-                            <a href="">
+                            <a href="{{ route('nomina') }}">
                                 <div class="icon icon-danger">
                                     <i class="material-icons">assignment</i>
                                 </div>
@@ -270,6 +259,17 @@
                             </a>
                         </div>
                     </div>
+
+                    <div class="col-md-4">
+                        <div class="info">
+                            <a class="" href="#">
+                                <div class="icon icon-success">
+                                    <i class="material-icons">attach_money</i>
+                                </div>
+                                <h4 class="info-title">Contabilidad</h4>
+                            </a>
+                        </div>
+                    </div>                    
                     
                     <div class="col-md-4">
                         <div class="info">

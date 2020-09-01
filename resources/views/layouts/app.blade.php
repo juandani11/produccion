@@ -18,6 +18,13 @@
         <link href="{{ asset('/css/material-kit.min.css') }}" rel="stylesheet"/>
         <!-- CSS Just for demo purpose, don't include it in your project -->
         <link href="{{ asset('demo/demo.css') }}" rel="stylesheet" />
+        <style>
+            @media all and (max-width: 640px) {        
+                .nav-bar {
+                    display: none;
+                }
+            }
+        </style>
 
                 
         @yield('styles')
