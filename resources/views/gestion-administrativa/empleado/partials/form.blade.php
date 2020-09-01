@@ -4,7 +4,7 @@
 </div>
 <div class="form-group">
 	{{ Form::label('nombre_empleado', 'Nombre Empleado:') }}
-	{{ Form::text('nombre_empleado', null, ['class' => 'form-control', 'id' => 'nombre_empleado']) }}
+	{{ Form::text('nombre_empleado', null, ['class' => 'form-control','placeholder'=>'Nombres + Apellidos', 'id' => 'nombre_empleado']) }}
 </div>
 <div class="form-group">
 	{{ Form::label('cedula_empleado', 'Cédula:') }}
@@ -24,7 +24,7 @@
 </div>
 <div class="form-group">
 	{{ Form::label('fecha_nacimiento_empleado', 'Fecha Nacimiento:') }}
-	{{ Form::text('fecha_nacimiento_empleado', null, ['class' => 'form-control datetimepicker','value'=>'08/25/2020', 'id' => 'calendario']) }}
+	{{ Form::text('fecha_nacimiento_empleado', null, ['class' => 'form-control datetimepicker','placeholder'=>'2020/09/01', 'value'=>'2020/09/01', 'id' => 'calendario']) }}
 </div>
 <div class="form-group">
 	{{ Form::submit('Guardar', ['class' => 'btn btn-sm btn-primary']) }}

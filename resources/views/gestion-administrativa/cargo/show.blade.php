@@ -39,7 +39,7 @@
         </div>
         <div class="card-body">
             <div class="detalle">
-                <h4 class="item">Nombre:</h4>
+                <h4 class="item">Nombre Cargo:</h4>
                 <p class="item">{{ $cargo->nombre_cargo }}</p>
             </div>
             <div class="detalle">

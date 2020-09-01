@@ -22,7 +22,7 @@
       <div class="info">
           <a class="" href="{{ route('departamentos.index') }}">
               <div class="icon icon-primary">
-                  <i class="material-icons">admin_panel_settings</i>
+                  <i class="material-icons">apartment</i>
               </div>
               <h4 class="info-title">Departamento</h4>
           </a>
@@ -33,7 +33,7 @@
       <div class="info">
           <a class="" href="{{ route('areas.index') }}">
               <div class="icon icon-success">
-                  <i class="material-icons">attach_money</i>
+                  <i class="material-icons">local_library</i>
               </div>
               <h4 class="info-title">Área </h4>
           </a>
@@ -44,7 +44,7 @@
       <div class="info">
           <a href="{{ route('sucursales.index') }}">
               <div class="icon icon-danger">
-                  <i class="material-icons">assignment</i>
+                  <i class="material-icons">satellite</i>
               </div>
               <h4 class="info-title">Sucursal</h4>
           </a>
@@ -66,7 +66,7 @@
       <div class="info">
           <a href="{{ route('empleados.index') }}">
               <div class="icon icon-info">
-                  <i class="material-icons">shopping_bag</i>
+                  <i class="material-icons">person</i>
               </div>
               <h4 class="info-title">Empleado</h4>
           </a>

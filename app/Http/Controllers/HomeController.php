@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class HomeController extends Controller
 {
@@ -28,5 +29,8 @@ class HomeController extends Controller
 
     public function ges_adm(){
         return view('gestion-administrativa.ges_adm');
+    }
+    public function nomina(){
+        return view('nomina.nomina');
     }
 }

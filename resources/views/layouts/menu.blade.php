@@ -56,6 +56,23 @@
             color: #000;
         }
 
+        /* Al reducir la pantalla, que los item estén en Columna */
+        @media all and (max-width: 640px) {        
+            #main {
+            -webkit-flex-flow: column;
+                    flex-flow: column;
+
+            margin-top: 16%;
+          }
+
+          #main > #container, #main > nav, #main > aside {
+            /* Todos los item se ponen en cero 0 */
+            -webkit-order: 0;
+                    order: 0;
+          }    
+        
+        }
+
     </style>
 @endsection
 
@@ -80,16 +97,19 @@
             </ul>
           </li> 
             <li>
-                <a class="nav-link" href="#flex_direction">Nómina</a>
+                <a class="nav-link" href="{{ route('nomina') }}">Nómina</a>
+                <ul class="nav flex-column">
+                <li><a class="nav-pills" href="{{ route('nomina') }}">Nómina </a></li>
+            </ul>
             </li>
             <li>
-              <a class="nav-link" href="#justify_content">Inventarios</a>
+              <a class="nav-link" href="#Inventarios">Inventarios</a>
             </li> 
             <li>
-              <a class="nav-link" href="#align_items">Compras</a>
+              <a class="nav-link" href="#Compras">Compras</a>
             </li> 
             <li>
-              <a class="nav-link" href="#align_items">Producción</a>
+              <a class="nav-link" href="#Producción">Producción</a>
               <ul class="nav flex-column">
                 <li><a class="nav-pills" href="#">BoM </a></li>
                 <li><a class="nav-pills" href="#">MPS </a></li>

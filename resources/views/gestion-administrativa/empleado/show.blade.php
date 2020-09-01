@@ -75,7 +75,7 @@
 
 <div class="tarjeta col-md-6" >
     <div class="card" style="width: 20rem;padding: 20px;">
-        <img class="card-img-top" src="{{'/img/faces/marc.jpg'}}" rel="nofollow" alt="image empleado">
+        <img class="card-img-top" src="{{$empleado->foto}}" rel="nofollow" alt="image empleado">
         <div class="detalle">
             <h4 class="item">Teléfono:</h4>
             <p class="item">{{ $empleado->telefono_empleado }}</p>
