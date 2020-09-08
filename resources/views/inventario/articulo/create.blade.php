@@ -26,11 +26,7 @@
 <div class="main ">
     <div class="container">
 
-        <div class="section">
-            <br>
-            <br>
-
-            <div class="tarjeta">
+        <div class="tarjeta">
             <div class="card card-nav-tabs text-center">
                 {!! Form::open(['route' => ['articulo.store']]) !!}
 
@@ -38,8 +34,6 @@
 
                 {!! Form::close() !!}
             </div>
-            </div>
-
         </div>
 
     </div>

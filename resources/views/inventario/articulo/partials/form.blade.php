@@ -4,11 +4,11 @@
 </div>
 <div class="form-group">
 	{{ Form::label('codigo', 'Codigo:') }}
-	{{ Form::textarea('codigo', null, ['class' => 'form-control','id' => 'codigo','rows'=>'1']) }}
+	{{ Form::text('codigo', null, ['class' => 'form-control','id' => 'codigo']) }}
 </div>
 <div class="form-group">
 	{{ Form::label('precio_venta', 'Precio venta:') }}
-	{{ Form::textarea('precio_venta', null, ['class' => 'form-control','id' => 'precio_venta','rows'=>'1']) }}
+	{{ Form::text('precio_venta', null, ['class' => 'form-control','id' => 'precio_venta']) }}
 </div>
 
 <div class="form-group">

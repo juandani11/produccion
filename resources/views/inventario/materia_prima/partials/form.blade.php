@@ -4,17 +4,17 @@
 </div>
 <div class="form-group">
 	{{ Form::label('codigo', 'Codigo:') }}
-	{{ Form::textarea('codigo', null, ['class' => 'form-control','id' => 'codigo','rows'=>'1']) }}
+	{{ Form::text('codigo', null, ['class' => 'form-control','id' => 'codigo']) }}
 </div>
 <div class="form-group">
 	{{ Form::label('precio', 'Precio:') }}
-	{{ Form::textarea('precio', null, ['class' => 'form-control','id' => 'precio','rows'=>'1']) }}
+	{{ Form::text('precio', null, ['class' => 'form-control','id' => 'precio']) }}
 </div>
 <div class="form-group">
     {{Form::label('proveedor_id','Seleccionar proveedor: ')}}
     <select name="proveedor_id" id="proveedor_id">Seleccionar proveedor
         @foreach($proveedors as $proovedor)
-            <option value="{{$proovedor->id}}">{{$proovedor->nombre}}</option>
+            <option value="{{ $proovedor->id }}">{{$proovedor->nombre}}</option>
         @endforeach
     </select>
 </div>
