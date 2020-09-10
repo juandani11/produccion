@@ -1,6 +1,6 @@
 @extends('layouts.menu')
 
-@section('title', 'Bienvenido a ' . config('app.name'))
+@section('title', 'Materia Prima | MRP')
 
 @section('body-class', 'landing-page')
 
@@ -11,6 +11,9 @@
         }
         ul.pagination {
             justify-content: center;
+        }
+        .section {
+          padding: 5px !important; 
         }
 
     </style>

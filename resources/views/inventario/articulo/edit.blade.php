@@ -1,6 +1,6 @@
 @extends('layouts.menu')
 
-@section('title', 'Bienvenido a ' . config('app.name'))
+@section('title', 'Editar | MRP')
 
 @section('body-class', 'landing-page')
 
@@ -8,16 +8,9 @@
     <style>
 
         .tarjeta {
-            display:flex;
             justify-content: center !important;
         }
-        .card {
-            padding-top: 5px;
-            padding-left: 8px;
-            padding-right: 8px;
-            padding-bottom: 5px;
-            width: 50%;
-        }
+
     </style>
 @endsection
 
@@ -25,27 +18,23 @@
 <div class="main ">
     <div class="container">
 
+        <div class="btn-group">
+            <a href="{{route('articulo.index')}}"
+                class="btn btn-sm btn-default">
+                volver
+            </a>
+        </div>
 
-            <div class="btn-group">
-
-                <a href="{{route('articulo.index')}}"
-                   class="btn btn-sm btn-default">
-                    volver
-                </a>
-
-            </div>
-            <div class="tarjeta">
-            <div class="card card-nav-tabs text-center">
-            {!! Form::model($articulo, ['route' => ['articulo.update', $articulo->id], 'method' => 'PUT']) !!}
+        <div class="tarjeta">
+            <div class="card card-crud card-nav-tabs text-center">
+                {!! Form::model($articulo, ['route' => ['articulo.update', $articulo->id], 'method' => 'PUT']) !!}
 
                 @include('inventario.articulo.partials.form')
 
                 {!! Form::close() !!}
             </div>
 
-            </div>
-
-
+        </div>
 
     </div>
         

@@ -1,6 +1,6 @@
 @extends('layouts.menu')
 
-@section('title', 'Gestión Cargo')
+@section('title', 'Gestión Cargo | MRP')
 
 @section('body-class', 'landing-page')
 

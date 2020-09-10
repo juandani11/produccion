@@ -1,6 +1,6 @@
 @extends('layouts.menu')
 
-@section('title', 'Gestión Empleado')
+@section('title', 'Gestión Empleado | MRP')
 
 @section('body-class', 'landing-page')
 
@@ -14,7 +14,7 @@
         }
         .section {
           padding: 5px !important; 
-      }
+        }
 
     </style>
 @endsection

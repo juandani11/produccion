@@ -20,6 +20,8 @@ Route::middleware(['auth'])->group(function () {
 	Route::get('/gestion-administrativa', 'HomeController@ges_adm')->name('ges_adm');
 	//Nómina
 	Route::get('/nomina', 'HomeController@nomina')->name('nomina');
+	//Invenatario
+	Route::get('/inventario', 'HomeController@inventario')->name('inventario');
 
 	//Bitácora
 	Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index')->name('bitacora')

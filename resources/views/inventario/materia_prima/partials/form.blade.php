@@ -13,8 +13,8 @@
 <div class="form-group">
     {{Form::label('proveedor_id','Seleccionar proveedor: ')}}
     <select name="proveedor_id" id="proveedor_id">Seleccionar proveedor
-        @foreach($proveedors as $proovedor)
-            <option value="{{ $proovedor->id }}">{{$proovedor->nombre}}</option>
+        @foreach($proveedors as $proveedor)
+            <option value="{{ $proveedor->id }}">{{$proveedor->nombre}}</option>
         @endforeach
     </select>
 </div>

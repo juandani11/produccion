@@ -1,6 +1,6 @@
 @extends('layouts.menu')
 
-@section('title', 'Gestion proovedores ')
+@section('title', 'Proveedores | MRP ')
 
 @section('body-class', 'landing-page')
 
