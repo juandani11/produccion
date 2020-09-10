@@ -273,7 +273,7 @@
                     
                     <div class="col-md-4">
                         <div class="info">
-                            <a href="">
+                            <a href="{{ route('inventario') }}">
                                 <div class="icon icon-warning">
                                     <i class="material-icons">assignment_late</i>
                                 </div>

@@ -27,7 +27,7 @@
             <h2 class="title text-center">Departamento
                 @can('departamentos.create')
                     <a href="{{ route('departamentos.create') }}" 
-                    class="btn btn-sm btn-primary pull-right">
+                        class="btn btn-sm btn-primary pull-right">
                         Crear Nuevo Departamento
                     </a>
                 @endcan

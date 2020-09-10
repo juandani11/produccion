@@ -1,6 +1,10 @@
 @extends('layouts.menu')
 
+<<<<<<< HEAD
 @section('title', 'Gestion proovedores ')
+=======
+@section('title', 'Proveedores | MRP ')
+>>>>>>> upstream/master
 
 @section('body-class', 'landing-page')
 

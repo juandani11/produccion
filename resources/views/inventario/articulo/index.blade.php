@@ -1,6 +1,10 @@
 @extends('layouts.menu')
 
+<<<<<<< HEAD
 @section('title', 'Gestion articulos ')
+=======
+@section('title', 'Gestion Articulos ')
+>>>>>>> upstream/master
 
 @section('body-class', 'landing-page')
 

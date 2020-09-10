@@ -1,6 +1,6 @@
 @extends('layouts.menu')
 
-@section('title', 'Empleado')
+@section('title', 'Empleado '. $empleado->nombre_empleado .' | MRP')
 
 @section('body-class', 'landing-page')
 
@@ -9,33 +9,7 @@
         #container {
             display: inline-flex;
         }
-        #navbar {
-        }
-        #aside {
-        }
-
-
-        .card-body {
-            display: flex;
-            flex-direction: column !important;
-        }
-        .detalle {
-            margin: 4px;
-            padding: 5px;
-            border: 1px solid #cccc33;
-            border-radius: 7pt;
-            background: #f9f9f9;
-            display: inline-flex;
-            align-items: baseline;
-            justify-content: space-between;      
-        }
-        .item {
-            padding-right: 20px;
-            padding-left:  20px;
-            text-align: right;
-        }
-
-
+        
     </style>
 @endsection
 
@@ -85,9 +59,6 @@
                 <p class="item">{{ $empleado->fecha_nacimiento_empleado }}</p>
         </div>
     </div>
-
-
-
 </div>
 
 

@@ -33,4 +33,7 @@ class HomeController extends Controller
     public function nomina(){
         return view('nomina.nomina');
     }
+    public function inventario(){
+        return view('inventario.inventario');
+    }
 }

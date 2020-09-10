@@ -1,6 +1,10 @@
 @extends('layouts.menu')
 
+<<<<<<< HEAD
 @section('title', 'Bienvenido a ' . config('app.name'))
+=======
+@section('title', 'Materia Prima | MRP')
+>>>>>>> upstream/master
 
 @section('body-class', 'landing-page')
 
@@ -12,6 +16,12 @@
         ul.pagination {
             justify-content: center;
         }
+<<<<<<< HEAD
+=======
+        .section {
+          padding: 5px !important; 
+        }
+>>>>>>> upstream/master
 
     </style>
 @endsection
