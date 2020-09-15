@@ -13,4 +13,7 @@ class Area extends Model
     protected $fillable = [
         'id_area','cod_area','nombre_area', 'id_departamento_area'
     ];
+    public function departamento(){
+        return $this->belongsTo(Departamento::Class);
+    }
 }

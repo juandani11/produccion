@@ -26,12 +26,12 @@
                 <p class="item">{{ $area->cod_area }}</p>
             </div>
             <div class="detalle">
-                <h5 class="item">Dpto. pertenece: </h5>
-                <p class="item">{{ $area->id_departamento_area }}</p>
+                <h5 class="item">Dpto.: </h5>
+                <p class="item">{{ $departamentos->nombre_departamento }}</p>
             </div>
         </div>
         <div class=" text-muted">
-            Código: {{ $area->id_departamento }} 
+            Código: {{ $area->id_departamento_area }} 
         </div>
     </div>
 </div>

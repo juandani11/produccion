@@ -1,6 +1,6 @@
 @extends('layouts.menu')
 
-@section('title', Crear Materia Prima)
+@section('title', 'Crear Materia Prima')
 
 @section('body-class', 'landing-page')
 

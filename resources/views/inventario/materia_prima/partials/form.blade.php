@@ -14,7 +14,13 @@
     {{Form::label('proveedor_id','Seleccionar proveedor: ')}}
     <select name="proveedor_id" id="proveedor_id">Seleccionar proveedor
         @foreach($proveedors as $proveedor)
-            <option value="{{ $proveedor->id }}">{{$proveedor->nombre}}</option>
+            <option value="{{ $proveedor->id }}"
+				@if( $proveedor->id===$materia_prima->proveedor_id)
+                    selected
+                @endif
+				>
+				{{$proveedor->nombre}}
+			</option>
         @endforeach
     </select>
 </div>

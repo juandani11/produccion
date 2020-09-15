@@ -41,7 +41,7 @@
                                 <th width="10px">ID</th>
                                 <th>Código</th>
                                 <th>Nombre Area</th>
-                                <th>Id Departamento</th>
+                                <th>Departamento</th>
                                 <th colspan="3">&nbsp;</th>
                             </tr>
                         </thead>
@@ -51,7 +51,7 @@
                                 <td>{{ $area->id_area }}</td>
                                 <td>{{ $area->cod_area }}</td>
                                 <td>{{ $area->nombre_area }}</td>
-                                <td>{{ $area->id_departamento_area}}</td>
+                                <td>{{ $area->nombre_departamento}}</td>
                                 @can('areas.show')
                                 <td width="10px">
                                     <a href="{{ route('areas.show', $area->id_area) }}" 

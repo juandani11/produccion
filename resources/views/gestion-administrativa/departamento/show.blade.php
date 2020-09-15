@@ -26,10 +26,6 @@
                 <h4 class="item">Código:</h4>
                 <p class="item">{{ $departamento->cod_departamento }}</p>
             </div>
-            <div class="detalle">
-                <h5 class="item">Sucursal pertenece: </h5>
-                <p class="item">{{ $departamento->id_sucursal_departamento }}</p>
-            </div>
         </div>
         <div class=" text-muted">
             Código: {{ $departamento->id_departamento }} 
