@@ -17,7 +17,7 @@
     <div class="container">
 
         <div class="btn-group">
-            <a href="{{route('materia_prima.index')}}"
+            <a href="{{route('inventario.index')}}"
                class="btn btn-sm btn-default">
                 volver
             </a>
@@ -25,9 +25,9 @@
 
         <div class="tarjeta">
             <div class="card card-crud card-nav-tabs text-center">
-                {!! Form::model($materia_prima, ['route' => ['materia_prima.update', $materia_prima->id], 'method' => 'PUT']) !!}
+                {!! Form::model($inventario, ['route' => ['inventario.update', $inventario->id], 'method' => 'PUT']) !!}
 
-                @include('inventario.materia_prima.partials.form')
+                @include('inventario.inventario.partials.form')
 
                 {!! Form::close() !!}
             </div>

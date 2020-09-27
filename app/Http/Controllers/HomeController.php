@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\DB;
+
 
 class HomeController extends Controller
 {
@@ -31,7 +33,19 @@ class HomeController extends Controller
         return view('gestion-administrativa.ges_adm');
     }
     public function nomina(){
-        return view('nomina.nomina');
+        $empleados = DB::table('historial_empleado')
+            ->join('empleado', 'id_empleado_historial', '=', 'id_empleado')
+            ->join('area', 'id_area_historial', '=', 'id_area')
+            ->join('cargo', 'id_cargo_historial', '=', 'id_cargo')
+            ->join('sucursal', 'id_sucursal_historial', '=', 'id_sucursal')
+            ->select('historial_empleado.*',
+                     'nombre_empleado',
+                     'nombre_area',
+                     'nombre_cargo',
+                     'nombre_sucursal'         
+                     )
+            ->paginate(15);
+        return view('nomina.nomina', compact('empleados'));
     }
     public function inventario(){
         return view('inventario.inventario');

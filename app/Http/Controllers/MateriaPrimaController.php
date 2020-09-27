@@ -18,7 +18,8 @@ class MateriaPrimaController extends Controller
     public function create()
     {
         $proveedors = Proveedor::all();
-        return view('inventario/materia_prima.create', compact('proveedors'));
+        $materia_prima = MateriaPrima::first();
+        return view('inventario/materia_prima.create', compact('proveedors'), compact('materia_prima'));
     }
     public function store(Request $request)
     {

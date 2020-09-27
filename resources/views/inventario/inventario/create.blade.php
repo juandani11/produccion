@@ -1,14 +1,16 @@
 @extends('layouts.menu')
 
-@section('title', 'Editar | MRP')
+@section('title', 'Crear Inventario')
 
 @section('body-class', 'landing-page')
 
 @section('styles')
     <style>
+
         .tarjeta {
             justify-content: center !important;
         }
+
     </style>
 @endsection
 
@@ -16,27 +18,18 @@
 <div class="main ">
     <div class="container">
 
-        <div class="btn-group">
-            <a href="{{route('materia_prima.index')}}"
-               class="btn btn-sm btn-default">
-                volver
-            </a>
-        </div>
-
         <div class="tarjeta">
             <div class="card card-crud card-nav-tabs text-center">
-                {!! Form::model($materia_prima, ['route' => ['materia_prima.update', $materia_prima->id], 'method' => 'PUT']) !!}
+                {!! Form::open(['route' => ['inventario.store']]) !!}
 
-                @include('inventario.materia_prima.partials.form')
+                @include('inventario.inventario.partials.form')
 
                 {!! Form::close() !!}
             </div>
-
         </div>
-        
+
     </div>
         
 </div>
-
 
 @endsection

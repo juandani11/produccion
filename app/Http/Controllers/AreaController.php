@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use App\Area;
+use App\Departamento;
+use Illuminate\Support\Facades\DB;
 
 class AreaController extends Controller
 {
@@ -15,7 +17,10 @@ class AreaController extends Controller
      */
     public function index()
     {
-        $areas = Area::paginate();
+        $areas = DB::table('Area')
+            ->join('Departamento', 'id_departamento_area', '=', 'id_departamento')
+            ->select('Area.*', 'nombre_departamento')
+            ->paginate(15);
 
         return view('gestion-administrativa.area.index', compact('areas'));
     }
@@ -26,7 +31,9 @@ class AreaController extends Controller
      */
     public function create()
     {
-        return view('gestion-administrativa.area.create');
+        $departamentos = Departamento::all();
+        $area= Area::first(); //variable que solo permite compaginar el selected en input-group
+        return view('gestion-administrativa.area.create', compact('departamentos'), compact('area'));
     }
 
     /**
@@ -38,7 +45,7 @@ class AreaController extends Controller
     public function store(Request $request)
     {
         $area = Area::create($request->all());
-
+        $departamentos = Departamento::all();
         return redirect()->route('areas.edit', $area->id_area)
             ->with('info', 'Area guardado con éxito');
     }
@@ -52,7 +59,8 @@ class AreaController extends Controller
     public function show($id_area)
     {
         $area = Area::find($id_area);
-        return view('gestion-administrativa.area.show', compact('area'));
+        $departamentos = Departamento::find($area->id_departamento_area);
+        return view('gestion-administrativa.area.show', compact('area'), compact('departamentos'));
     }
 
     /**
@@ -64,8 +72,9 @@ class AreaController extends Controller
     public function edit($id_area)
     {
         $area = Area::find($id_area);
+        $departamentos = Departamento::all();
 
-        return view('gestion-administrativa.area.edit', compact('area'));
+        return view('gestion-administrativa.area.edit', compact('area'), compact('departamentos'));
     }
 
     /**

@@ -138,6 +138,8 @@
                     <li><a class="nav-pills" href="{{route('proveedor.index')}}">Proveedor </a></li>
                     <li><a class="nav-pills" href="{{route('materia_prima.index')}}">Materia Prima </a></li>
                     <li><a class="nav-pills" href="{{route('articulo.index')}}">Articulo </a></li>
+                    <li><a class="nav-pills" href="{{route('almacen.index')}}">Almacén </a></li>
+                    <li><a class="nav-pills" href="{{route('inventario.index')}}">Inventario </a></li>
                 </ul>
             </li>
             <li>

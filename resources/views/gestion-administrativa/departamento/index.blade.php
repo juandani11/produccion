@@ -41,7 +41,6 @@
                                 <th width="10px">ID</th>
                                 <th>Código</th>
                                 <th>Nombre Departamento</th>
-                                <th>Id Sucursal</th>
                                 <th colspan="3">&nbsp;</th>
                             </tr>
                         </thead>
@@ -51,7 +50,6 @@
                                 <td>{{ $departamento->id_departamento }}</td>
                                 <td>{{ $departamento->cod_departamento }}</td>
                                 <td>{{ $departamento->nombre_departamento }}</td>
-                                <td>{{ $departamento->id_sucursal_departamento}}</td>
                                 @can('departamentos.show')
                                 <td width="10px">
                                     <a href="{{ route('departamentos.show', $departamento->id_departamento) }}" 

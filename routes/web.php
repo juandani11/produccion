@@ -260,7 +260,51 @@ Route::middleware(['auth'])->group(function () {
         ->middleware('can:articulo.create');
 
     Route::post('articulo/store', 'ArticuloController@store')->name('articulo.store')
-        ->middleware('can:articulo.create');
+		->middleware('can:articulo.create');
+		
+	//Almacen
+    Route::get('inventario/almacen', 'AlmacenController@index')->name('almacen.index')
+        ->middleware('can:almacen.index');
+
+    Route::get('almacen/{almacen}', 'AlmacenController@show')->name('almacen.show')
+        ->middleware('can:almacen.show');
+
+    Route::get('almacen/{almacen}/edit', 'AlmacenController@edit')->name('almacen.edit')
+        ->middleware('can:almacen.edit');
+
+    Route::delete('almacen/{almacen}', 'AlmacenController@destroy')->name('almacen.destroy')
+        ->middleware('can:almacen.destroy');
+
+    Route::put('almacen/{almacen}', 'AlmacenController@update')->name('almacen.update')
+        ->middleware('can:almacen.edit');
+
+    Route::get('inventario/almacen/create', 'AlmacenController@create')->name('almacen.create')
+        ->middleware('can:almacen.create');
+
+    Route::post('almacen/store', 'AlmacenController@store')->name('almacen.store')
+		->middleware('can:almacen.create');
+		
+	//Inventario
+    Route::get('inventario/inventario', 'InventarioController@index')->name('inventario.index')
+        ->middleware('can:inventario.index');
+
+    Route::get('inventario/{inventario}', 'InventarioController@show')->name('inventario.show')
+        ->middleware('can:inventario.show');
+
+    Route::get('inventario/{inventario}/edit', 'InventarioController@edit')->name('inventario.edit')
+        ->middleware('can:inventario.edit');
+
+    Route::delete('inventario/{inventario}', 'InventarioController@destroy')->name('inventario.destroy')
+        ->middleware('can:inventario.destroy');
+
+    Route::put('inventario/{inventario}', 'InventarioController@update')->name('inventario.update')
+        ->middleware('can:inventario.edit');
+
+    Route::get('inventario/inventario/create', 'InventarioController@create')->name('inventario.create')
+        ->middleware('can:inventario.create');
+
+    Route::post('inventario/store', 'InventarioController@store')->name('inventario.store')
+        ->middleware('can:inventario.create');
 
 });
 
