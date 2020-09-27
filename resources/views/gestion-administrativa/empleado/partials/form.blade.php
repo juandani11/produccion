@@ -1,3 +1,9 @@
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<script src="https://unpkg.com/gijgo@1.9.11/js/gijgo.min.js" type="text/javascript"></script>
+<link href="https://unpkg.com/gijgo@1.9.11/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+
 <div class="form-group">
 	{{ Form::label('cod_empleado', 'Código Empleado:') }}
 	{{ Form::text('cod_empleado', null, ['class' => 'form-control', 'id' => 'cod_empleado']) }}
@@ -23,9 +29,18 @@
 	{{ Form::text('telefono_empleado', null, ['class' => 'form-control']) }}
 </div>
 <div class="form-group">
-	{{ Form::label('fecha_nacimiento_empleado', 'Fecha Nacimiento:') }}
-	{{ Form::text('fecha_nacimiento_empleado', null, ['class' => 'form-control datetimepicker','placeholder'=>'2020/09/01', 'value'=>'2020/09/01', 'id' => 'calendario']) }}
+    {{ Form::label('fecha_nacimiento_empleado', 'Fecha de nacimiento:') }}
+    {{ Form::text('fecha_nacimiento_empleado', null, ['class' => 'form-control']) }}
+
 </div>
+<script>
+
+    $('#fecha_nacimiento_empleado').datepicker({
+        uiLibrary: 'bootstrap',
+        format: 'yyyy/mm/dd'
+    });
+</script>
 <div class="form-group">
 	{{ Form::submit('Guardar', ['class' => 'btn btn-sm btn-primary']) }}
 </div>
+
