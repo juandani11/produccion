@@ -117,8 +117,8 @@
         <header class="">Sistema MRP</header>
         <ul class="nav flex-column">
           <li>
-            <a class="nav-link"  href="{{ route('ges_adm') }}">Gestión Administrativa </a>
-            <ul class="nav flex-column" >
+            <a class="nav-link" href="{{ route('ges_adm') }}">Gestión Administrativa</a>
+            <ul class="nav flex-column">
                 <li><a class="nav-pills" href="{{ route('departamentos.index') }}">Departamento </a></li>
                 <li><a class="nav-pills" href="{{ route('areas.index') }}">Área </a></li>
                 <li><a class="nav-pills" href="{{ route('sucursales.index') }}">Sucursal </a></li>
@@ -133,8 +133,8 @@
                 </ul>
             </li>
             <li>
-              <a class="nav-link" href="{{ route('inventario') }}" >Inventarios</a>
-                <ul class="nav flex-column" >
+              <a class="nav-link" href="{{ route('inventario') }}">Inventarios</a>
+                <ul class="nav flex-column">
                     <li><a class="nav-pills" href="{{route('proveedor.index')}}">Proveedor </a></li>
                     <li><a class="nav-pills" href="{{route('materia_prima.index')}}">Materia Prima </a></li>
                     <li><a class="nav-pills" href="{{route('articulo.index')}}">Articulo </a></li>
@@ -144,8 +144,8 @@
               <a class="nav-link" href="#Compras">Compras</a>
             </li> 
             <li>
-              <a class="nav-link dropdown-toggle" href="#Producción" data-toggle="detail-1" >Producción</a>
-              <ul class="nav flex-column" id="detail-1">
+              <a class="nav-link" href="#Producción">Producción</a>
+              <ul class="nav flex-column">
                 <li><a class="nav-pills" href="#">BoM </a></li>
                 <li><a class="nav-pills" href="#">MPS </a></li>
                 <li><a class="nav-pills" href="#">MRP </a></li>
@@ -157,16 +157,5 @@
       <aside id="aside">aside</aside>
    </div>
 
-
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-
-
-  <script>$(document).ready(function() {
-          $('[id^=detail-]').hide();
-          $('.nav-link').click(function() {
-              $input = $( this );
-              $target = $('#'+$input.attr('data-toggle'));
-              $target.slideToggle();
-          });
-      });</script>
+  
 @endsection
