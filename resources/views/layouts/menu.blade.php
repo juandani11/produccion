@@ -144,8 +144,9 @@
             </li>
             <li>
               <a class="nav-link" href="#Compras">Compras</a>
-            </li> 
-            <li>
+                <ul class="nav flex-column">
+                    <li><a class="nav-pills" href="{{route('orden_aprovisionamiento.index')}}">Orden Aprovisionamiento </a></li>
+                </ul>
               <a class="nav-link" href="#Producción">Producción</a>
               <ul class="nav flex-column">
                 <li><a class="nav-pills" href="#">BoM </a></li>

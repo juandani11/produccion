@@ -306,6 +306,29 @@ Route::middleware(['auth'])->group(function () {
     Route::post('inventario/store', 'InventarioController@store')->name('inventario.store')
         ->middleware('can:inventario.create');
 
+
+    //Almacen
+    Route::get('compra/orden_aprovisionamiento', 'OrdenAprovisionamientoController@index')->name('orden_aprovisionamiento.index')
+        ->middleware('can:orden_aprovisionamiento.index');
+
+    Route::get('orden_aprovisionamiento/{orden_aprovisionamiento}', 'OrdenAprovisionamientoController@show')->name('orden_aprovisionamiento.show')
+        ->middleware('can:orden_aprovisionamiento.show');
+
+    Route::get('orden_aprovisionamiento/{orden_aprovisionamiento}/edit', 'OrdenAprovisionamientoController@edit')->name('orden_aprovisionamiento.edit')
+        ->middleware('can:orden_aprovisionamiento.edit');
+
+    Route::delete('orden_aprovisionamiento/{orden_aprovisionamiento}', 'OrdenAprovisionamientoController@destroy')->name('orden_aprovisionamiento.destroy')
+        ->middleware('can:orden_aprovisionamiento.destroy');
+
+    Route::put('orden_aprovisionamiento/{orden_aprovisionamiento}', 'OrdenAprovisionamientoController@update')->name('orden_aprovisionamiento.update')
+        ->middleware('can:orden_aprovisionamiento.edit');
+
+    Route::get('compra/orden_aprovisionamiento/create', 'OrdenAprovisionamientoController@create')->name('orden_aprovisionamiento.create')
+        ->middleware('can:orden_aprovisionamiento.create');
+
+    Route::post('orden_aprovisionamiento/store', 'OrdenAprovisionamientoController@store')->name('orden_aprovisionamiento.store')
+        ->middleware('can:orden_aprovisionamiento.create');
+
 });
 
 

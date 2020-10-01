@@ -56,10 +56,29 @@
         </div>
         <div class="detalle">
                 <h4 class="item">Fecha Nacimiento:</h4>
-                <p class="item">{{ $empleado->fecha_nacimiento_empleado }}</p>
+                <p class="item"  id="fecha_n">{{ $empleado->fecha_nacimiento_empleado }}</p>
         </div>
+        <div class="detalle">
+            <h4 class="item"  >Edad</h4>
+            <p class="item" id="edad"></p>
+        </div>
+
     </div>
 </div>
++<script>
+    window.onload = calcularEdad(document.getElementById("fecha_n").innerHTML);
+    function calcularEdad($fecha) {
+        var hoy = new Date();
+        var cumpleanos = new Date($fecha);
+        var edad = hoy.getFullYear() - cumpleanos.getFullYear();
+        var m = hoy.getMonth() - cumpleanos.getMonth();
 
+        if (m < 0 || (m === 0 && hoy.getDate() < cumpleanos.getDate())) {
+            edad--;
+        }
+        document.getElementById("edad").innerHTML  = edad;
+        return edad;
+    }
+</script>
 
 @endsection
